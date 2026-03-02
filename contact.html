@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | SocialRealtorFL</title>
+    <meta name="description" content="Contact SocialRealtorFL for all your real estate needs in South Florida. Call (561) 000-0000 or fill out our contact form.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">SocialRealtor<span>FL</span></a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="team.html">About</a>
+                    <ul class="dropdown">
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="team.html#leadership">Leadership</a></li>
+                    </ul>
+                </li>
+                <li><a href="properties.html">Properties</a>
+                    <ul class="dropdown">
+                        <li><a href="properties.html">For Sale</a></li>
+                        <li><a href="properties.html#sold">Past Sales</a></li>
+                        <li><a href="properties.html#rentals">Rentals</a></li>
+                    </ul>
+                </li>
+                <li><a href="areas-we-serve.html">Areas We Serve</a></li>
+                <li><a href="testimonials.html">Reviews</a></li>
+                <li><a href="contact.html" class="btn-nav active">Contact Us</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Get in touch with our expert real estate team</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h2>Let's Connect</h2>
+                    <p class="contact-intro">Whether you're looking to buy, sell, or just have questions about the South Florida real estate market, we're here to help.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <h4>📞 Phone</h4>
+                            <p><a href="tel:5610000000">(561) 000-0000</a></p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>✉️ Email</h4>
+                            <p><a href="mailto:info@socialrealtorfl.com">info@socialrealtorfl.com</a></p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>📍 Office</h4>
+                            <p>Your Office Address<br>Jupiter, FL 33469</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>🕐 Hours</h4>
+                            <p>Monday - Friday: 9am - 6pm<br>Saturday: 10am - 4pm<br>Sunday: By Appointment</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-social">
+                        <h4>Follow Us</h4>
+                        <div class="social-links">
+                            <a href="#">Facebook</a>
+                            <a href="#">Instagram</a>
+                            <a href="#">LinkedIn</a>
+                            <a href="#">YouTube</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <h2>Send Us a Message</h2>
+                    <form class="contact-form" action="#" method="POST">
+                        <div class="form-group">
+                            <label for="interest">I'm interested in...</label>
+                            <select id="interest" name="interest" required>
+                                <option value="">Select an option</option>
+                                <option value="buying">Buying a Home</option>
+                                <option value="selling">Selling a Home</option>
+                                <option value="both">Buying & Selling</option>
+                                <option value="renting">Renting</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Property Address (if applicable)</label>
+                            <input type="text" id="address" name="address">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Tell us about your real estate needs..."></textarea>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="consent" name="consent" required>
+                            <label for="consent">I agree to be contacted by SocialRealtorFL via call, email, and text for real estate services. To opt out, you can reply 'stop' at any time or reply 'help' for assistance. Message and data rates may apply.</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map -->
+    <section class="map-section">
+        <div class="map-placeholder">
+            <p>📍 Interactive Map Would Go Here</p>
+            <p>Jupiter, Florida</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>SocialRealtor<span>FL</span></h3>
+                    <p>Your premier real estate team serving South Florida.</p>
+                    <div class="footer-contact">
+                        <p>📞 <a href="tel:5610000000">(561) 000-0000</a></p>
+                        <p>✉️ <a href="mailto:info@socialrealtorfl.com">info@socialrealtorfl.com</a></p>
+                        <p>📍 Your Office Address<br>Jupiter, FL 33469</p>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="properties.html">Properties</a></li>
+                        <li><a href="areas-we-serve.html">Areas We Serve</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-areas">
+                    <h4>Areas We Serve</h4>
+                    <ul>
+                        <li><a href="areas-we-serve.html">Jupiter</a></li>
+                        <li><a href="areas-we-serve.html">Palm Beach Gardens</a></li>
+                        <li><a href="areas-we-serve.html">Stuart</a></li>
+                        <li><a href="areas-we-serve.html">Port St. Lucie</a></li>
+                        <li><a href="areas-we-serve.html">West Palm Beach</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#">Facebook</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">LinkedIn</a>
+                        <a href="#">YouTube</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SocialRealtorFL. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
