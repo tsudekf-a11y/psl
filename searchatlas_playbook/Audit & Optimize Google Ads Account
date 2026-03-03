@@ -1,0 +1,150 @@
+Objective: Orchestrate a Senior-Level Google Ads Audit using the campaign_performance agent, culminating in a strategic execution phase.
+Phase 1: Context & Initiation
+Get today's date
+Account Selection & Vitals
+Action: Fetch connected Google Ads accounts using list_accessible_customers.
+Display Requirement: Render the available accounts in a Markdown table.
+Interaction: Ask the user to select the account and timeframe (Default: Last 30 days).
+Conversion Reality Check
+Action: Fetch conversion actions using otto_ppc_ads_account_mgmt->get_ads_account_conversions.
+Display Requirement: Render the conversion configuration table (Name, Category, Type, Status, Origin).
+Prompt: "I've detected the conversion structure above. Only 'Primary' actions affect bidding and CPA calculations. Are these correct?"
+Phase 2: Execute Intelligence (Strict Bucket Logic)
+Trigger the campaign_performance agent to perform the Full Account Review.
+🚨 CRITICAL INSTRUCTION: You MUST strictly follow the "Bucket-Relative Analysis" logic.
+Structure: Create separate sections for Branded, Non-Branded, Retargeting all campaigns should fit on one of the following
+Metrics: For every campaign, you MUST display:
+CPA vs Bucket Baseline (e.g., "-15%")
+Lost IS (Budget) (Crucial for scaling context)
+Retargeting Context: For the Retargeting bucket, explicitly state if the CPA is within the safe range of ≤ 1.5x Branded CPA.
+Phase 3: Execution Staging (The War Room)
+Override the standard Agent execution prompt. Organize all recommended actions into these three Strategic Operations.
+
+**🚨 UNIFIED TABLE FORMAT (Applies to ALL Batches)**
+
+**Display Format: STRICTLY TABLE ONLY (No bulleted lists)**
+
+🛡️ DEFENSE or ⚔️ OFFENSE (Market Expansion) or ⚙️ TACTICS (Technical Tuning)
+
+| Campaign | Adjustment | {Metric Name} | Reason |
+|----------|------------|---------------|---------|
+| {Campaign Name} | ${Current} → ${Proposed} | **~${Amount}** | {Natural language reason} |
+
+**Column Specifications:**
+1. **Campaign**: Campaign name
+2. **Adjustment**: Budget change format
+   - Format: `${Current} → ${Proposed}`
+   - Examples: `$100 → $0 (Pause)`, `$500 → $370`, `$200 → $280`
+3. **{Metric Name}**: Calculation: **(|Proposed - Current|) × 30.4**
+   - Format: Currency, rounded to whole number (e.g., ~$3,040)
+   - **Visual: BOLD this value** (this is the hero metric)
+   - Column name varies by batch: "Est. Monthly Savings" / "Est. Monthly Investment" / "Est. Monthly Impact"
+4. **Reason**: Natural language only (no raw math like "CPA $213 (+19%)")
+   - Use batch-specific templates defined below
+
+**Sorting:** Always sort by Column 3 (Highest to Lowest)
+---
+
+Batch 1: 🛡️ DEFENSE (Budget Protection)
+**Logic:**
+- Entities with CPA > +30% above their Bucket Baseline
+- Retargeting campaigns where CPA > 1.5x Branded CPA
+- Zero conversions despite high spend
+
+**Column 3 Name:** "Est. Monthly Savings"
+
+**Reason Templates:**
+- **Inefficiency**: "Current CPA is {Percentage}% higher than your target."
+- **Zero Conversions**: "Zero conversions generated despite high spend."
+- **Ceiling Breach**: "CPA is {X}x higher than the allowable limit."
+
+Batch 2: ⚔️ OFFENSE (Market Expansion)
+
+**Pre-Calculation (Step 1):**
+Calculate `avg_branded_bucket_cpa` = Sum of Cost for all Branded campaigns / Sum of Conversions for all Branded campaigns
+
+**Guardrail Logic:**
+
+**Rule A: Retargeting Campaigns (Strict Guardrail)**
+- Check: Campaign in Retargeting Bucket OR name contains "Retargeting", "Remarketing"
+- Condition: IF Campaign CPA ≤ (1.5 × avg_branded_bucket_cpa) → CREATE Recommendation
+- ELSE → SKIP (too expensive relative to branded traffic)
+
+**Rule B: Branded Campaigns**
+- Check: Campaign in Branded Bucket OR name contains "Brand"
+- Condition: IF Lost IS (Budget) ≥ 5% → CREATE Recommendation
+- ELSE → SKIP (inventory is finite; cannot force more spend)
+
+**Rule C: Non-Branded / Generic Campaigns**
+- Check: All other campaigns
+- Condition: IF Campaign CPA < Target CPA → CREATE Recommendation
+
+**Column 3 Name:** "Est. Monthly Investment"
+
+**Reason Templates:**
+- **Scenario A (Branded)**: "High demand. Losing {Lost IS Budget}% of impressions due to budget."
+- **Scenario B (Retargeting)**: "Efficient recovery. CPA is within 1.5x of the Branded Bucket average."
+- **Scenario C (Non-Branded)**: "High efficiency (CPA is {X}% below target). Scaling recommended."
+
+Batch 3: ⚙️ TACTICS (Technical Tuning)
+
+**Logic:**
+- Optimize/Improve recommendations
+- Keyword hygiene (remove underperforming keywords)
+- Add negative keywords
+- Technical optimizations that don't require budget changes
+
+**Column 3 Name:** "Est. Monthly Impact"
+
+**Adjustment Column Format:** Action description (not budget change)
+- Examples: `Add 8 negative keywords`, `Remove 12 underperforming keywords`, `Refine audience targeting`
+- If impact cannot be quantified, use: **~TBD**
+
+**Reason Templates:**
+- **Wasted Spend**: "Wasted ${X} last month on irrelevant searches."
+- **Poor Performance**: "Keywords show {X}% higher CPA than campaign average."
+- **Targeting Issue**: "Current targeting generating low-quality traffic."
+
+
+Phase 4: Authorization & Impact Summary
+
+**Part 1: Authorization Table**
+
+Apply system prompt color formatting rules (green for savings, red for investments).
+
+Display all recommendations as table. Sort: Defense (highest savings), Offense (highest investment), Tactics (priority).
+
+| Number | Type | Campaign | Action | Monthly Impact |
+|-----|------|----------|--------|----------------|
+| 1 | 🛡️ Defense | {Name} | ${Current} → ${Proposed} | ${Savings} Saved |
+| 2 | ⚔️ Offense | {Name} | ${Current} → ${Proposed} | ${Investment} Invested |
+| 3 | 🔧 Tactics | {Name} | {Action} | Efficiency Only |
+
+---
+
+**Part 2: Impact Summary (4-Row Matrix)**
+
+🚨 Dynamically calculate based on items above.
+
+| Strategy Bucket | Net Budget Impact | Est. Conversion Lift | Efficiency Note |
+|-----------------|-------------------|---------------------|-----------------|
+| 🛡️ Defense | +${Total_Savings} Saved | 0 | Removes {X}% Wasted Spend |
+| ⚔️ Offense | -${Total_Investment} Invested | +{X} Conv. | Scales Proven Winners |
+| 🔧 Tactics | $0 | +{X} Conv. | Improves Quality Score |
+| 🚀 **TOTAL** | **±${Net} Net Saved** | **+{Total} Monthly Conv.** | CPA Drops ~{X}% |
+
+**Calculation:**
+- Offense Conv.: Total Investment / Target CPA
+- Tactics Conv.: +5% from Quality Score improvement
+- Total: (Defense Savings - Offense Investment)
+
+---
+
+**Prompt:**
+
+"Review the Impact Summary. Ready to execute?
+1. ✅ Execute All Checked
+2. 🎯 Modify Selection
+3. 🛡️ Defense Only
+4. ⚔️ Offense Only
+5. ❌ Cancel"
