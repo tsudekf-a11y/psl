@@ -1,0 +1,17 @@
+Analyze my website and optimize the most critical onpage SEO elements to improve search visibility. Focus exclusively on the top 10% most important pages based on traffic, conversions, or strategic value.
+
+Primary optimizations to implement:
+- Title tags: Ensure unique, keyword-optimized titles within 50-60 characters
+- Meta descriptions: Create compelling, click-worthy descriptions within 150-160 characters
+- Heading structure: Verify proper H1-H6 hierarchy and keyword placement
+- Heading length optimization: Adjust heading lengths for optimal readability and SEO impact
+
+Execution steps:
+1. Identify the top 10% most important pages using analytics data
+2. Audit current state of title tags, meta descriptions, and heading structure on those pages
+3. Generate optimized recommendations for each element
+4. Present proposed changes for review before deployment
+5. After approval, deploy optimizations across selected pages
+6. Provide summary report of changes made
+
+Output format: Present findings and recommendations in a structured report showing before/after comparisons for each optimization type.
