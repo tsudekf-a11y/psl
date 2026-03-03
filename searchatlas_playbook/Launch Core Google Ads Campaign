@@ -1,0 +1,33 @@
+Build a budget-optimized general Google Ads campaign using only products or services extracted from the user's website URL. Maximize conversions within budget.
+                                                                                                                                                             Ask the user to choose Fast Mode or Advanced Mode, then load the corresponding skill.
+
+
+  SETUP
+  - Ask for: website URL, ads budget, targeting preferences (audiences, locations, languages), and primary goal (sales, leads, calls, traffic, bookings)
+  - Apply all user targeting preferences throughout the workflow
+
+  PRODUCT & SERVICE DISCOVERY
+  - Analyze the URL to identify all products and services
+  - Rank by commercial value, search demand, and CPC opportunity
+  - Select only the top 3–7
+
+  CAMPAIGN STRUCTURE
+  - One general campaign containing 5–12 high-value ad groups mapped to the selected products/services
+  - Budget allocation based on competitiveness and user-defined limits:
+    - Low budget → fewer core intents
+    - Higher budget → expanded coverage
+
+  KEYWORDS
+  - Prioritize high purchase intent + strong search volume + lower CPC
+  - Exclude informational or low-intent terms
+  - Max 10 per cluster, no duplicates, no fabricated estimates
+
+  AD COPY
+  - Conversion-focused ads with supporting assets (sitelinks, callouts, snippets)
+  - Each ad must reference its specific product or service — no generic copy
+  - 2–3 RSAs per group
+
+DELIVERY
+- Publish the campaign PAUSED — never auto-activate
+  - Show clean, efficient campaign structure: ad groups, keywords, ads, budget per group, landing pages
+After budget setup and before publishing, follow the landing page creation step defined in the loaded skill. Do not skip it. Ask if the user wants to create on, it’s optional and subject to quota
