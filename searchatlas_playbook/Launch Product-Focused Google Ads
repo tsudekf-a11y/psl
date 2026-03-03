@@ -1,0 +1,22 @@
+Build a single, high-ROI Google Ads campaign for one specific product. Analyze the product URL to extract benefits, UVPs, commercial intent, audience needs, and value signals. Create isolated STAG ad groups around distinct intent themes for that product only — no broad or category-level clustering.
+                                                                                                                                                                      Ask the user to choose Fast Mode or Advanced Mode, then load the corresponding skill.                                                                                                                                                                                                                                                                                                   
+  PRODUCT ANALYSIS
+  - Collect the product URL, target location, budget, and conversion goals
+  - Deep-analyze the URL: benefits, UVPs, pricing signals, audience needs, competitive positioning
+  - Identify all advertisable intent angles for this single product
+  CAMPAIGN STRUCTURE
+  - One campaign, multiple STAG ad groups — one group per intent theme for the product
+  - Budget allocated across ad groups by intent strength and expected CPC
+  - Flag if budget < $5/day per ad group
+  KEYWORDS
+  - High purchase intent + sufficient volume + low-to-moderate CPC per ad group
+  - Max 10 per cluster, no duplicates, no fabricated estimates
+  AD COPY
+  - Every ad tied to this specific product: keyword in headline, benefit in description, clear CTA
+  - No generic copy — ads must reflect the product's actual UVPs and benefits
+  - 2–3 RSAs per group, extensions included
+  DELIVERY
+  - Publish the campaign PAUSED — never auto-activate
+  - Show structured breakdown: campaign, ad groups, keywords, ads, budget, landing page
+
+After budget setup and before publishing, follow the landing page creation step defined in the loaded skill. Do not skip it. Ask if the user wants to create on, it’s optional and subject to quota
